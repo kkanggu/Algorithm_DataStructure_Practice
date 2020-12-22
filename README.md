@@ -7,3 +7,8 @@ Day 1 : Data Structure 'List' end. Single, double, circular.
         e.g. At DB, dealing with records viewed sequentially.
 Day 2 : Implement Double Linked List with C style
         Basic.h is a collection of basic headers like stdio.h, stdlib.h, etc.
+Day 3 : Data Structure 'Stack' end.
+        Modify Double Linked List with C style
+        Implement Stack with two version.
+        First version is Stack using Array with C style
+        Second version is Stack using Single Linked List with C style
