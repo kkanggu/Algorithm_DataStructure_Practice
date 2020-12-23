@@ -13,7 +13,7 @@ typedef struct LinkedListNode
 typedef struct LinkedListStack
 {
 	Node * m_pHead ;																	// Head, first input. Pop last
-	Node * m_pTail ;																	// Tail, lats input. Pop first
+	Node * m_pTail ;																	// Tail, last input. Pop first
 	int m_iCnt ;
 } LinkedListStack ;
 

@@ -19,3 +19,12 @@ Day 3 : Data Structure 'Stack' end.
         Implement Stack with two version.
         First version is Stack using Array with C style
         Second version is Stack using Single Linked List with C style
+
+Day 4 : Data Structure 'Queue' end.
+        Queue is suitable for Queue processing.
+        Circular Queue has good performance, but hard to handle.
+        Linked Queue is easy to implement, but performance is slower than Circular Queue.
+        Implement Queue with two version.
+        First version is Circular Queue with array, C style.
+        Second version is Linked Queue with Single Linked List, C style.
+        For separation, change .cpp to .c file.
