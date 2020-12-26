@@ -41,3 +41,13 @@ Day 5
 >So I expressed 'half end'   
 >I already know Binary Tree, but Left Child Right Sibling Tree is first got to know.   
 >Implement LCRS Tree and Binary Tree with C style.
+
+Day 6
+>Algorithm 'Sort' half end.   
+>At book show only 3 sorting algorithms. Bubble, Insertion, Quick.   
+>Last cemester, I studied 3 more sorting algorithms. Selection, Merge, Heap.   
+>Bubble is worst, and average time of Insertion is better than Bubble.   
+>Quick used Divide-and-Conquer, so it's very fast. To avoid worst-case, add one short condition.   
+>If data array has 3 more datas, then use the middle value of first 3 datas.   
+>Selection has similar performance as Bubble and Insertion.   
+>Merge and Heap has similar performance as Quick, and I know that Heap is faster than others.

@@ -85,8 +85,8 @@ void DLL_InsertNode ( LinkedList ** pLinkedList , Node * pCurrent , Node * pNewN
 
 void DLL_RemoveNode ( LinkedList ** pLinkedList , Node * pRemove )							// Remove pRemove
 {
-	Node * pDetection ;
-	Node * pTemp ;
+	Node * pDetection = NULL ;
+	Node * pTemp = NULL ;
 
 
 
