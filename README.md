@@ -51,3 +51,10 @@ Day 6
 >If data array has 3 more datas, then use the middle value of first 3 datas.   
 >Selection has similar performance as Bubble and Insertion.   
 >Merge and Heap has similar performance as Quick, and I know that Heap is faster than others.
+
+Day 7
+>Algorithm 'Searching' half end.   
+>Understand Sequential Search & Binary Search Tree.   
+>Understand Red Black Tree, but code at the book is incomprehensible.   
+>Finally, I implemented upper two code, but I couldn't implement Red Black Tree.   
+>And code at the book didn't work well.
