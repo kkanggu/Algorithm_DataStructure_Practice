@@ -71,7 +71,7 @@ RBTNode * RBT_SearchMinNode ( RBTNode * pRoot )									// Search RBTNode that h
 
 	while ( NIL != pNode -> m_pLeft )
 	{
-		pNode = pNode -> m_pRight ;
+		pNode = pNode -> m_pLeft ;
 	}
 
 
@@ -80,7 +80,7 @@ RBTNode * RBT_SearchMinNode ( RBTNode * pRoot )									// Search RBTNode that h
 
 void RBT_InsertNode ( RBTNode ** pRoot , RBTNode * pNode )						// Insert pNode into RBT
 {
-	RBTNode * pSearch = NULL ;
+	RBTNode * pSearch = * pRoot ;
 	RBTNode * pTemp = * pRoot ;
 
 
@@ -175,7 +175,12 @@ void RBT_RebuildAfterInsert ( RBTNode ** pRoot , RBTNode * pNode )				// After i
 {
 	while ( ( * pRoot != pNode ) && ( RED == pNode -> m_pParent -> COLOR ) )
 	{
-		if ( pNode -> m_pParent == pNode -> m_pParent -> m_pParent -> m_pLeft )				// Left Parent
+		if ( * pRoot == pNode -> m_pParent )
+		{
+			if ( RED == pNode -> m_pParent -> COLOR )
+				pNode -> m_pParent -> COLOR = BLACK ;
+		}
+		else if ( pNode -> m_pParent == pNode -> m_pParent -> m_pParent -> m_pLeft )			// Left Parent
 		{
 			if ( RED == pNode -> m_pParent -> m_pParent -> m_pRight -> COLOR )					// Uncle is RED
 			{
@@ -189,7 +194,8 @@ void RBT_RebuildAfterInsert ( RBTNode ** pRoot , RBTNode * pNode )				// After i
 			{
 				if ( pNode == pNode -> m_pParent -> m_pRight )									// pNode is RIGHT child of parent
 				{
-					RBT_RotateLeft ( pRoot , pNode -> m_pParent ) ;
+					pNode = pNode -> m_pParent ;
+					RBT_RotateLeft ( pRoot , pNode ) ;
 				}
 
 				
@@ -212,7 +218,8 @@ void RBT_RebuildAfterInsert ( RBTNode ** pRoot , RBTNode * pNode )				// After i
 			{
 				if ( pNode == pNode -> m_pParent -> m_pLeft )									// pNode is RIGHT child of parent
 				{
-					RBT_RotateRight ( pRoot , pNode -> m_pParent ) ;
+					pNode = pNode -> m_pParent ;
+					RBT_RotateRight ( pRoot , pNode ) ;
 				}
 
 				

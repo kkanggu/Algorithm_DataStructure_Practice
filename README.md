@@ -58,3 +58,10 @@ Day 7
 >Understand Red Black Tree, but code at the book is incomprehensible.   
 >Finally, I implemented upper two code, but I couldn't implement Red Black Tree.   
 >And code at the book didn't work well.
+
+Day 8
+>Modify Red Black Tree, half end.   
+>I fixed the insert problem by modifying the code.   
+>But remove is still unresolved.   
+>When removing red node, sometimes min node color for the color of right childs is BLACK.   
+>If that node comes up to removed node, then the count of black nodes root through leaf is not the same.
