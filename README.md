@@ -63,5 +63,11 @@ Day 8
 >Modify Red Black Tree, half end.   
 >I fixed the insert problem by modifying the code.   
 >But remove is still unresolved.   
->When removing red node, sometimes min node color for the color of right childs is BLACK.   
+>When removing red node, sometimes min node color for the right child node is BLACK.   
 >If that node comes up to removed node, then the count of black nodes root through leaf is not the same.
+
+Day 9
+>Finally modified Red Black Tree   
+>In conclusion, remove is simple.   
+>If I removed the node that have lots of childs, copy the min node value for the right child node.   
+>Then it will excute the code as if I removed the copied min node.

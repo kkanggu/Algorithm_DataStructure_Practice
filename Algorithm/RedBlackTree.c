@@ -85,7 +85,7 @@ void RBT_InsertNode ( RBTNode ** pRoot , RBTNode * pNode )						// Insert pNode 
 
 
 
-	if ( NULL == * pRoot )
+	if ( NIL == * pRoot )
 	{
 		* pRoot = pNode ;
 	}
@@ -135,7 +135,7 @@ RBTNode * RBT_RemoveNode ( RBTNode ** pRoot , T Data )							// Remove RBTNode w
 		return NULL ;
 	}
 	
-	if ( ( NIL == ( * pRoot ) -> m_pLeft ) || ( NIL == ( * pRoot ) -> m_pRight ) )
+	if ( ( NIL == pTarget -> m_pLeft ) || ( NIL == pTarget -> m_pRight ) )
 	{																				// Has NILL
 		pRemoveNode = pTarget ;
 	}
@@ -143,13 +143,14 @@ RBTNode * RBT_RemoveNode ( RBTNode ** pRoot , T Data )							// Remove RBTNode w
 	{																				// No Nil, two child
 		pRemoveNode = RBT_SearchMinNode ( pTarget -> m_pRight ) ;
 		pTarget -> m_Data = pRemoveNode -> m_Data ;
+		pSuccessor = pRemoveNode ;
 	}
+
 
 	if ( NIL != pRemoveNode -> m_pLeft )
 		pSuccessor = pRemoveNode -> m_pLeft ;
 	else
 		pSuccessor = pRemoveNode -> m_pRight ;
-
 
 	pSuccessor -> m_pParent = pRemoveNode -> m_pParent ;
 
