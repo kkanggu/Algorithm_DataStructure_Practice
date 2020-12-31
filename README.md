@@ -71,3 +71,9 @@ Day 9
 >In conclusion, remove is simple.   
 >If I removed the node that have lots of childs, copy the min node value for the right child node.   
 >Then it will excute the code as if I removed the copied min node.
+
+Day 10
+>Data Structure 'Heap' and 'Priority Queue' end.   
+>At the book, these are located at algorithm section. But I think this is some kind of Data Structure.   
+>Heap is very useful. Can use this to HeapSort, or Priority Queue, and so on.   
+>Implement Heap, and Priority Queue using Heap.
