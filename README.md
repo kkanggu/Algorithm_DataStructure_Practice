@@ -77,3 +77,10 @@ Day 10
 >At the book, these are located at algorithm section. But I think this is some kind of Data Structure.   
 >Heap is very useful. Can use this to HeapSort, or Priority Queue, and so on.   
 >Implement Heap, and Priority Queue using Heap.
+
+Day 11
+>Algorithm 'Hash Table' end.   
+>Hash is very useful. At this section, I learn only Hash Table.   
+>Also used in search string and encryption. At this book, I'll learn Hash Table and search string. But now, I'll learn Hash Table first.   
+>Hash Table is better than Binary Search. In the sophomore Algorithm lecture, I couldn't learn how good Hash Table is and passed it lightly.   
+>I implement two Hash Table, chaining and double hashing.
