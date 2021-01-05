@@ -84,3 +84,9 @@ Day 11
 >Also used in search string and encryption. At this book, I'll learn Hash Table and search string. But now, I'll learn Hash Table first.   
 >Hash Table is better than Binary Search. In the sophomore Algorithm lecture, I couldn't learn how good Hash Table is and passed it lightly.   
 >I implement two Hash Table, chaining and double hashing.
+
+Day 12
+>Data Structure 'Graph' End   
+>At the book, these are located at algorithm section. But I think Graph is Data Structure.   
+>In the field of theory, I learned Graph, Adjacent List and Array, DFS, BFS, Topological Sorting, Minimum Spanning Tree, and algorithm Prim, Kruskal, Dijkstra.   
+>Today I implement only Graph with Adjacent List and Array.
