@@ -1,10 +1,10 @@
-#include "DoubleLinkedList.h"
+#include "SingleLinkedList.h"
 
-LinkedList * DLL_CreateLinkedList ()								// Create LinkedList struct
+LinkedList * SLL_CreateLinkedList ()								// Create LinkedList struct
 {
 	LinkedList * pLinkedList = ( LinkedList * ) malloc ( sizeof ( pLinkedList ) ) ;
 
-	
+
 
 	pLinkedList -> m_iCnt = 0 ;
 	pLinkedList -> m_pHead = NULL ;
@@ -13,7 +13,7 @@ LinkedList * DLL_CreateLinkedList ()								// Create LinkedList struct
 	return pLinkedList ;
 }
 
-void DLL_DestroyLinkedList ( LinkedList ** pLinkedList )									// Destroy LinkedList struct
+void SLL_DestroyLinkedList ( LinkedList ** pLinkedList )									// Destroy LinkedList struct
 {
 	Node * pNode = ( * pLinkedList ) -> m_pHead ;
 
@@ -30,26 +30,25 @@ void DLL_DestroyLinkedList ( LinkedList ** pLinkedList )									// Destroy Link
 	free ( * pLinkedList ) ;
 }
 
-Node * DLL_CreateNode ( T Data )															// Add new Node with data, type T
+Node * SLL_CreateNode ( V Data )															// Add new Node with data, type T
 {
 	Node * pNewNode = ( Node * ) malloc ( sizeof ( Node ) ) ;
 
 
 
 	pNewNode -> m_Data = Data ;
-	pNewNode -> m_pPrev = NULL ;
 	pNewNode -> m_pNext = NULL ;
 
 
 	return pNewNode ;
 }
 
-void DLL_DestroyNode ( Node * pNode )														// Destroy pNode
+void SLL_DestroyNode ( Node * pNode )														// Destroy pNode
 {
 	free ( pNode ) ;
 }
 
-void DLL_AppendNode ( LinkedList ** pLinkedList , Node * pNewNode )							// Add New Node
+void SLL_AppendNode ( LinkedList ** pLinkedList , Node * pNewNode )							// Add New Node
 {
 	if ( NULL == ( * pLinkedList ) -> m_pHead )												// If Empty
 	{
@@ -68,29 +67,26 @@ void DLL_AppendNode ( LinkedList ** pLinkedList , Node * pNewNode )							// Add
 
 
 		pTail -> m_pNext = pNewNode ;
-		pNewNode -> m_pPrev = pTail ;
 		++ ( * pLinkedList ) -> m_iCnt ;
 	}
 }
 
-void DLL_InsertNode ( LinkedList ** pLinkedList , Node * pCurrent , Node * pNewNode )		// Inser pNewNode after pCurrent, pCurrent -> pNewNode
+void SLL_InsertNode ( LinkedList ** pLinkedList , Node * pCurrent , Node * pNewNode )		// Inser pNewNode after pCurrent, pCurrent -> pNewNode
 {
 	pCurrent -> m_pNext = pNewNode ;
-	pNewNode -> m_pPrev = pCurrent ;
 
-	if ( NULL != pCurrent -> m_pNext )			// pCurrent -> pAfter
+	if ( NULL != pCurrent -> m_pNext )												// pCurrent -> pAfter
 	{
 		Node * pAfter = pCurrent -> m_pNext ;
 
 
 		
-		pAfter -> m_pPrev = pNewNode ;
 		pNewNode -> m_pNext = pAfter ;
 		++ ( * pLinkedList ) -> m_iCnt ;
 	}
 }
 
-void DLL_RemoveNode ( LinkedList ** pLinkedList , Node * pRemove )							// Remove pRemove
+void SLL_RemoveNode ( LinkedList ** pLinkedList , Node * pRemove )							// Remove pRemove
 {
 	Node * pDetection = NULL ;
 	Node * pTemp = NULL ;
@@ -108,20 +104,17 @@ void DLL_RemoveNode ( LinkedList ** pLinkedList , Node * pRemove )							// Remo
 		pDetection = pDetection -> m_pNext ;
 	}
 
-	if ( NULL != pDetection )						// Find pRemove, pTemp -> pDetection
+	if ( NULL != pDetection )														// Find pRemove, pTemp -> pDetection
 	{
-		if ( NULL != pDetection -> m_pNext )		// If pDetection is not Tail
-			pDetection -> m_pNext -> m_pPrev = pTemp ;
-
 		pTemp -> m_pNext = pDetection -> m_pNext ;
-		DLL_DestroyNode ( pDetection ) ;
+		SLL_DestroyNode ( pDetection ) ;
 		-- ( * pLinkedList ) -> m_iCnt ;
 	}
 }
 
-Node * DLL_GetNodeAt ( LinkedList * pLinkedList , int iPosition )							// Get Node of iPosition
+Node * SLL_GetNodeAt ( LinkedList * pLinkedList , int iPosition )							// Get Node of iPosition
 {
-	if ( pLinkedList -> m_iCnt > iPosition )				// If not overflow
+	if ( pLinkedList -> m_iCnt > iPosition )										// If not overflow
 	{
 		Node * pDetection = pLinkedList -> m_pHead ;
 
@@ -135,4 +128,10 @@ Node * DLL_GetNodeAt ( LinkedList * pLinkedList , int iPosition )							// Get N
 
 		return pDetection ;
 	}
+}
+
+void SLL_InsertNewHead ( LinkedList * pLinkedList , Node ** pNewHead )						// Add pNewHead to Head
+{
+	( * pNewHead ) -> m_pNext = pLinkedList -> m_pHead ;
+	pLinkedList -> m_pHead = * pNewHead ;
 }

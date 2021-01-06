@@ -90,3 +90,9 @@ Day 12
 >At the book, these are located at algorithm section. But I think Graph is Data Structure.   
 >In the field of theory, I learned Graph, Adjacent List and Array, DFS, BFS, Topological Sorting, Minimum Spanning Tree, and algorithm Prim, Kruskal, Dijkstra.   
 >Today I implement only Graph with Adjacent List and Array.
+
+Day 13
+>Graph Algorithm half end.   
+>I implemented Single Linked List, DisjointSet, and Topological Sort.   
+>I'm modifying Prim's Algorithm.   
+>I'm not feeling good, the rest will be end tomorrow.

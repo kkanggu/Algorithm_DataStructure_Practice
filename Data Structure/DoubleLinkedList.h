@@ -17,7 +17,7 @@ typedef struct LinkedList
 	int m_iCnt ;																		// For counting. Only Head have cnt info
 } LinkedList ;
 
-LinkedList * DLL_CreateLinkedList ( LinkedList ** pLinkedList ) ;						// Create LinkedList struct
+LinkedList * DLL_CreateLinkedList () ;													// Create LinkedList struct
 void DLL_DestroyLinkedList (LinkedList ** pLinkedList ) ;								// Destroy LinkedList struct
 Node * DLL_CreateNode ( T Data ) ;														// Add new Node with data, type T
 void DLL_DestroyNode ( Node * pNode ) ;													// Destroy pNode

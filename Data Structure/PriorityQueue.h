@@ -2,8 +2,6 @@
 
 #include "Basic.h"
 
-typedef int T ;																// Template for understanding
-
 typedef struct PriorityQueueNode
 {
 	int m_iPriority ;
