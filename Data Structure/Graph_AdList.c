@@ -134,12 +134,12 @@ void PrintGraph ( Graph * G )												// Print current Graph G
 
 	while ( NULL != V )
 	{
-		printf ( "Vertex %d :" , V -> m_iIndex ) ;
+		printf ( "Vertex %d :" , V -> m_Data ) ;
 
 
 		while ( NULL != E )
 		{
-			printf ( " %d[%d]" , E -> m_pTarget -> m_iIndex , E -> m_iWeight ) ;
+			printf ( " %d[%d]" , E -> m_pTarget -> m_Data , E -> m_iWeight ) ;
 
 			E = E -> m_pNext ;
 		}

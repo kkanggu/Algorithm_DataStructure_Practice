@@ -86,7 +86,7 @@ Day 11
 >I implement two Hash Table, chaining and double hashing.
 
 Day 12
->Data Structure 'Graph' End   
+>Data Structure 'Graph' end.   
 >At the book, these are located at algorithm section. But I think Graph is Data Structure.   
 >In the field of theory, I learned Graph, Adjacent List and Array, DFS, BFS, Topological Sorting, Minimum Spanning Tree, and algorithm Prim, Kruskal, Dijkstra.   
 >Today I implement only Graph with Adjacent List and Array.
@@ -96,3 +96,9 @@ Day 13
 >I implemented Single Linked List, DisjointSet, and Topological Sort.   
 >I'm modifying Prim's Algorithm.   
 >I'm not feeling good, the rest will be end tomorrow.
+
+Day 14
+>Algorithm 'Prim' end.   
+>The code at the book use Priority Queue, but I didn't use it.   
+>Because of Graph, I had to use lot memory.   
+>To get good performance, I have to modify Graph code.
