@@ -59,32 +59,6 @@ void Prim ( Graph * G , Vertex * StartVertex , Graph * MST )							// Prim algor
 			}
 		}
 
-		/*printf ( "Vertex : " ) ;
-		for ( int i = 0 ; i < iCnt ; ++i )
-		{
-			if ( NULL != VFinalVertex [ i ] )
-			{
-				printf ( "%d" , VFinalVertex [ i ] -> m_iIndex ) ;
-				printf ( "[%d] " , i ) ;
-			}
-		}
-		printf ( "\nEdge : " ) ;
-		for ( int i = 0 ; i < iCnt ; ++i )
-		{
-			if ( NULL != EFinalEdge [ i ] )
-			{
-				printf ( "%d" , EFinalEdge [ i ] -> m_iWeight ) ;
-				printf ( "[%d] " , i ) ;
-			}
-		}
-		printf ( "\nWeight : " ) ;
-		for ( int i = 0 ; i < iCnt ; ++i )
-		{
-			printf ( "%d" , irgWeight [ i ] ) ;
-			printf ( "[%d] " , i ) ;
-		}
-		printf ( "\n\n" ) ;*/
-		
 		E = ESelectArray [ iIndex ] ;
 		VFinalVertex [ iIndex ] = CreateVertex ( E -> m_pTarget -> m_iIndex ) ;
 		AddVertex ( MST , VFinalVertex [ iIndex ] ) ;
@@ -113,61 +87,73 @@ void Kruskal ( Graph * G , Graph * MST )												// Kruskal algorithm
 {
 	const int iCnt = G -> m_iVertexCnt ;
 	Vertex * V = G -> m_pVertices ;
+	Vertex * VFrom ;
+	Vertex * VTarget ;
 	Edge * E = V -> m_pAdjacencyList ;
 	PriorityQueue * PQ = PQ_Create ( 20 ) ;
-	bool * bVertexCheck = ( bool * ) malloc ( sizeof ( bool ) * iCnt ) ;
 	int iIndex = -1 ;
-	Vertex ** VFirstVertex = ( Vertex ** ) malloc ( sizeof ( Vertex * ) * iCnt ) ;
 	Vertex ** VFinalVertex = ( Vertex ** ) malloc ( sizeof ( Vertex * ) * iCnt ) ;
 	Edge ** EFinalEdge = ( Edge ** ) malloc ( sizeof ( Edge * ) * iCnt ) ;
-	DisjointSet ** Set = ( DisjointSet ** ) malloc ( sizeof ( DisjointSet * ) * ( iCnt / 2 ) ) ;
+	DisjointSet ** Set = ( DisjointSet ** ) malloc ( sizeof ( DisjointSet * ) * iCnt ) ;
 	Node PQNode ;
 
 
 
 	for ( int i = 0 ; i < iCnt ; ++i )											// Initialize
 	{
-		bVertexCheck [ i ] = false ;											// Used Vertex check
-		VFirstVertex [ V -> m_iIndex ] = V ;									// Initial Vertex set, easy to access
-		VFinalVertex [ i ] = NULL ;												// Final Vertex, use array to easy to access
+		VFinalVertex [ V -> m_iIndex ] = CreateVertex ( V -> m_iIndex) ;		// Vertex array, make it first.
 		EFinalEdge [ i ] = NULL ;												// Final Edge, use array to easy to access
+		Set [ i ] = DS_MakeSet ( V -> m_iIndex ) ;								// With this, find Disjoint set
+
+		AddVertex ( MST , VFinalVertex [ i ] ) ;
+
 		V = V -> m_pNext ;
 	}
-	for ( int i = 0 ; i < iCnt / 2 ; ++i )
-	{
-		Set [ i ] = NULL ;
-	}
-
+	
 
 	V = G -> m_pVertices ;
 
 
-	while ( V != NULL )
+	while ( NULL != V )															// Enqueue every Edge in ascending order
 	{
+		E = V -> m_pAdjacencyList ;
+
+
 		while ( NULL != E )
 		{
 			Node NewNode = { E -> m_iWeight , E } ;
 
 
-			PQ_Enqueue ( PQ , PQNode ) ;
+			PQ_Enqueue ( PQ , NewNode ) ;
 			E = E -> m_pNext ;
 		}
 
 
 		V = V -> m_pNext ;
-		E = V -> m_pAdjacencyList ;
 	}
-	while ( iCnt != MST -> m_iVertexCnt )
-	{
+	for ( int i = 0 ; i < iCnt - 1 ; )											// Main loop
+	{																			// If MST is made, then quit this loop
 		PQNode = PQ_Dequeue ( PQ ) ;
+		
+		E = PQNode.m_pData ;
+		VFrom = E -> m_pFrom ;
+		VTarget = E -> m_pTarget ;
+
+		if ( DS_FindSet ( Set [ VFrom -> m_iIndex ] )
+			!= DS_FindSet ( Set [ VTarget -> m_iIndex ] ) )						// If a cycle isn't made when Edge is inserted
+		{
+			DS_UnionSet ( DS_FindSet ( Set [ VFrom -> m_iIndex ] ) , DS_FindSet ( Set [ VTarget -> m_iIndex ] ) ) ;
+			EFinalEdge [ i ] = CreateEdge ( VFinalVertex [ E -> m_pFrom -> m_iIndex ] , VFinalVertex [ E -> m_pTarget -> m_iIndex ] , E -> m_iWeight ) ;
+			AddEdge ( VFinalVertex [ E -> m_pFrom -> m_iIndex ] , EFinalEdge [ i++ ] ) ;
+		}
 	}
 
-
+	for ( int i = 0 ; i < iCnt ; ++i )
+	{
+		DS_DestroySet ( Set [ i ] ) ;
+	}
+	free ( Set ) ;
 	PQ_Destroy ( PQ ) ;
-	free ( bVertexCheck ) ;
-	free ( VFirstVertex ) ;
 	free ( VFinalVertex ) ;
 	free ( EFinalEdge ) ;
-	free ( * Set ) ;
-	free ( Set ) ;
 }

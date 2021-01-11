@@ -28,7 +28,7 @@ void LQ_DestroyQueue ( LinkedQueue ** pQueue )						// Destroy Queue and Nodes
 	free ( * pQueue ) ;
 }
 
-Node * LQ_CreateNode ( T Data )										// Create Node and return it
+Node * LQ_CreateNode ( V Data )										// Create Node and return it
 {
 	Node * pNode = ( Node * ) malloc ( sizeof ( Node ) ) ;
 
@@ -65,7 +65,7 @@ void LQ_Enqueue ( LinkedQueue ** pQueue , Node * pNode )			// Enqueue pNode into
 
 Node * LQ_Dequeue ( LinkedQueue ** pQueue )							// Dequeue Node from pQueue
 {
-	if ( LQ_IsEmpty ( * pQueue ) )
+	if ( ! LQ_IsEmpty ( * pQueue ) )
 	{
 		Node * pNode = ( * pQueue ) -> m_pHead ;
 

@@ -102,3 +102,11 @@ Day 14
 >The code at the book use Priority Queue, but I didn't use it.   
 >Because of Graph, I had to use lot memory.   
 >To get good performance, I have to modify Graph code.
+
+Day 15
+>Algorithm 'Kruskal' and 'Dijkstra' end.   
+>I made a wrong approach to Prim's algorithm.   
+>If I use Priority Queue, then it's more easy to implement, and it can be easier code.   
+>Unlike Prim, Kruskal and Dijkstra is very easy to implement.   
+>The code at the book used Priority Queue when implementing Dijkstra.   
+>But I think Queue is more suitable, so I used it.

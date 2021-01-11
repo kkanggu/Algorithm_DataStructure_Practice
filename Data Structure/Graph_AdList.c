@@ -136,6 +136,8 @@ void PrintGraph ( Graph * G )												// Print current Graph G
 	{
 		printf ( "Vertex %d :" , V -> m_Data ) ;
 
+		E = V -> m_pAdjacencyList ;
+
 
 		while ( NULL != E )
 		{
@@ -148,6 +150,5 @@ void PrintGraph ( Graph * G )												// Print current Graph G
 		printf ( "\n" ) ;
 
 		V = V -> m_pNext ;
-		E = V -> m_pAdjacencyList ;
 	}
 }

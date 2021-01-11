@@ -27,7 +27,7 @@ DisjointSet * DS_MakeSet ( void * NewData )									// Make Set with void * NewD
 	NewNode -> m_pParent = NULL ;
 
 
-	return DS_MakeSet ;
+	return NewNode ;
 }
 
 void DS_DestroySet ( DisjointSet * Set )									// Destroy Set
