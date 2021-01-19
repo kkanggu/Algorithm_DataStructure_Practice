@@ -110,3 +110,10 @@ Day 15
 >Unlike Prim, Kruskal and Dijkstra is very easy to implement.   
 >The code at the book used Priority Queue when implementing Dijkstra.   
 >But I think Queue is more suitable, so I used it.
+
+Day 16 & 17
+>String search Algorithm end.   
+>At this chapter, there are three popular algorithms.   
+>I tried to implement all of this, but I couldn't.   
+>I unserstanded the principles, but I couldn't make it into code.
+>I implemented RabinKarp, but I just copied KMP & Boyer-Moore algorithm.
