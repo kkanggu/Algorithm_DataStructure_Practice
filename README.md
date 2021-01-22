@@ -117,3 +117,11 @@ Day 16 & 17
 >I tried to implement all of this, but I couldn't.   
 >I unserstanded the principles, but I couldn't make it into code.
 >I implemented RabinKarp, but I just copied KMP & Boyer-Moore algorithm.
+
+Day 18
+>Chapter 'Analyzing algorithm performance' end.   
+>This chapter is about anlyzing algorithm performance.   
+>Asymptotic Notation includes O, Ω, θ.   
+>And it shows how to analyze recursion algorithm, and Master theorem.   
+>I already learned almost everything, and Master theorem is hard to understand that the book says.   
+>But the way to analyze recursion algorithm that the book shows is very informative.
