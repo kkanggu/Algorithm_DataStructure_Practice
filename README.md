@@ -125,3 +125,13 @@ Day 18
 >And it shows how to analyze recursion algorithm, and Master theorem.   
 >I already learned almost everything, and Master theorem is hard to understand that the book says.   
 >But the way to analyze recursion algorithm that the book shows is very informative.
+
+Day 19
+>Chapter 'Divide and Conquer' end.   
+>This chapter is about divide and conquer.   
+>There are three codes that this chapter says. Merge sort, Fibonacci, Matrix.   
+>To show proper example for divide and conquer, merge sort is appeared at this chapter.   
+>In the sophomore Algorithm lecture, Fibonacci problem is solved by dynamic programming.   
+>But at this book, this problem is solved by divide and conquer using Matrix.   
+>Fibonacci is expressed using Matrix, so it's easy to calculate.   
+>Upper algorithms have a time complexity of O(logn).
