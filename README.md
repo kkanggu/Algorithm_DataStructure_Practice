@@ -135,3 +135,14 @@ Day 19
 >But at this book, this problem is solved by divide and conquer using Matrix.   
 >Fibonacci is expressed using Matrix, so it's easy to calculate.   
 >Upper algorithms have a time complexity of O(logn).
+
+Day 20
+>Chapter 'Dynamic Programming' end.   
+>This chapter is about dynamic programming.   
+>'Divide and Conquer' is Top-down, get solution from top to go down.   
+>'Dynamic Programming' is Bottom-up, get solution from bottom to go up.   
+>There are two codes, Fibonacci and LCS algorithm.   
+>I already learned this chapter at sophomore Algorithm lecture, but LCS is very useful to me.   
+>I understood LCS almost half, and I finally understand LCS with this book.   
+>Thanks to the table, it's easy to understand.   
+>LCS algorithm with dynamic programming has a time complexity of O(mn).
