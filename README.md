@@ -146,3 +146,9 @@ Day 20
 >I understood LCS almost half, and I finally understand LCS with this book.   
 >Thanks to the table, it's easy to understand.   
 >LCS algorithm with dynamic programming has a time complexity of O(mn).
+
+Day 21
+>Chapter 'Greedy Algorithm' end.   
+>This chapter is about greedy algorithm.   
+>Former algorithm 'Dijkstra' is also greedy algorithm.   
+>I learned Huffman algorithm, and it's very useful.
