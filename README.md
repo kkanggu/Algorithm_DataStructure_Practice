@@ -152,3 +152,10 @@ Day 21
 >This chapter is about greedy algorithm.   
 >Former algorithm 'Dijkstra' is also greedy algorithm.   
 >I learned Huffman algorithm, and it's very useful.
+
+Day 22
+>Last Chapter 'Backtracking' end.   
+>This chapter is about backtracking algorithm.   
+>For example, there was a maze and N-Queens problem.   
+>Branch and Bound is similar to backtracking. But, there's no info about branch and bound.   
+>The book is end. Tomorrow, I'll try to implement Huffman algorithm.
